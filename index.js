@@ -20,13 +20,9 @@ const __dirname = path.resolve();
 app.use(express.json());
 app.use(cookieParser());
 app.use(urlencoded({ extended: true }));
-const corsOptions = {
-    origin: process.env.URL,
-    credentials: true
-}
 
 app.use(cors({
-  origin: ['http://localhost:5173'], // allow your frontend origin
+  origin: process.env.URL, // allow your frontend origin
   credentials: true                 // allow cookies if needed
 }));
 
